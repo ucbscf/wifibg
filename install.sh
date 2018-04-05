@@ -11,7 +11,7 @@ if [ ! -d "/var/log/wifibg" ] ; then
      chown 755 /var/log/wifibg
 fi
 
-for i in update-shared-network-pass.sh update-shared-network-pass.sh clean-account.sh
+for i in update-snp-background.sh update-shared-network-pass.sh clean-account.sh
     do echo "copying ${i} to $USRSBIN/${i}" ;
     if [ ! -f "$USRSBIN/${i}" ] ; then
          cp $PROGDIR/${i} $USRSBIN/${i}
