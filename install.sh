@@ -1,5 +1,4 @@
 #!/bin/sh
-#edu.berkeley.stat.updatesnpbackground.plist
 
 IMAGE="Sierra"
 USRSBIN='/usr/local/sbin'
