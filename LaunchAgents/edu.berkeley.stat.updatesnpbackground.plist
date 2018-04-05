@@ -12,7 +12,7 @@
         <true/>
         <key>WatchPaths</key>
         <array>
-        <string>/var/log/updatesharedwifi</string>
+        <string>/var/log/wifibg</string>
         </array>        
 </dict>
 </plist>

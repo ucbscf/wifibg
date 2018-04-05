@@ -24,6 +24,6 @@
 	<key>StandardErrorPath</key>
 	<string>/dev/null</string>
 	<key>StandardOutPath</key>
-	<string>/var/log/updatesharedwifi/updatesharedwifi.log</string>
+	<string>/var/log/wifibg/wifibg.log</string>
 </dict>
 </plist>
