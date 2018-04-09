@@ -5,12 +5,12 @@
 #"for i" loop.
 #for i in `who | grep "console" | cut -d" " -f1`
 #    do HOMEDIR="$(eval echo ~${i})";
-for i in neyman 
-    do HOMEDIR="/Users/neyman";
-    echo "Cleaning $HOMEDIR";
-    for i in Desktop Downloads Documents
-        do echo "Deleting $HOMEDIR/${i} contents";
-        rm -rf $HOMEDIR/${i}/*
-    done
+user=neyman
+echo "Cleaning $HOMEDIR";
+for i in Desktop Downloads Documents; do
+    d="/Users/${user}/${i}"
+    echo "Deleting ${d} contents";
+    rm -rf ${d}
+    install -d -o ${user} ${d}
 done
 
