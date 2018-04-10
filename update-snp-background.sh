@@ -9,4 +9,12 @@ if [ ! -f "/Library/Desktop Pictures/${IMAGE}_Anno.jpg" ] ; then
     exit 1
 fi
 
-killall Dock
+if [ -f "/Users/${USER}/wifibgi.log" ] ; then
+    DIFF="$(diff -q /var/log/wifibg/wifibg.log)"
+    if [ "${DIFF}" != "" ] ; then 
+        killall Dock
+    fi
+else
+    cp /var/log/wifibg/wifibg.log /Users/${USER}/wifibgi.log
+fi
+
