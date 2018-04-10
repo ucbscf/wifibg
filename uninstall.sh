@@ -24,7 +24,7 @@ if [ ! -f "$LADIR/edu.berkeley.stat.updatesnpbackground.plist" ] ; then
      rm $LADIR/edu.berkeley.stat.updatesnpbackground.plist
 fi
 
-for i in update-shared-network-pass.sh update-shared-network-pass.sh clean-account.sh
+for i in update-snp-background.sh update-shared-network-pass.sh clean-account.sh
     do echo "deleting ${i} to $USRSBIN/${i}" ;
     if [ -f "$USRSBIN/${i}" ] ; then
          rm $USRSBIN/${i}
