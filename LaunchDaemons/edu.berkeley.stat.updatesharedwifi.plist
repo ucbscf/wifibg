@@ -9,7 +9,7 @@
 	  <string>/usr/local/sbin/update-shared-network-pass.sh</string>
 	</array>
         <key>RunAtLoad</key>
-        <true/>
+        <false/>
         <key>StartCalendarInterval</key>
         <array>
             <dict>
