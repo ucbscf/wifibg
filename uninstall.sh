@@ -34,3 +34,7 @@ done
 if [ -d "/var/log/wifibg" ] ; then
      rm -rf /var/log/wifibg
 fi
+
+if [ -f "/Users/${USER}/wifibg.log" ] ; then
+    rm -f /Users/${USER}/wifibg.log
+fi

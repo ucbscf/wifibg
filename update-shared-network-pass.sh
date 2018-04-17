@@ -1,5 +1,7 @@
 #/bin/sh
 
+WIFIBGDIR='/var/log/wifibg'
+
 if [ -f /usr/local/bin/convert ] ; then
     CONVERT=/usr/local/bin/convert
 elif [ -f /opt/local/bin/convert ] ; then
@@ -13,7 +15,11 @@ HOST=$(hostname -s)
 USER=$(id -n -u)
 IMAGE="Sierra"
 
-echo "USER: ${USER} ${HOST} Airport Password: ${PASS}"
+if [ -f "$WIFIBGDIR/wifibg.log" ] ; then
+    echo "USER: ${USER} ${HOST} Airport Password: ${PASS}"
+else
+    echo "USER: ${USER} ${HOST} Airport Password: ${PASS}" > $WIFIBGDIR/wifibg.log
+fi
 
 security add-generic-password -a AirPort -l en1 -j "Internet-sharing password" -s com.apple.network.wlan.swap.ssid.en1 -w "${PASS}" -U
 
