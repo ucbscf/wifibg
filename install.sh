@@ -5,16 +5,10 @@ USRSBIN='/usr/local/sbin'
 LDDIR='/Library/LaunchDaemons'
 LADIR='/Library/LaunchAgents'
 PROGDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-USER=$(id -n -u)
 
 if [ ! -d "/var/log/wifibg" ] ; then
      mkdir /var/log/wifibg
      chmod 755 /var/log/wifibg
-fi
-
-if [ ! -f "/Users/${USER}/wifibg.log" ] ; then
-    touch /Users/${USER}/wifibg.log
-    chown ${USER} /Users/${USER}/wifibg.log
 fi
 
 for i in update-snp-background.sh update-shared-network-pass.sh clean-account.sh
