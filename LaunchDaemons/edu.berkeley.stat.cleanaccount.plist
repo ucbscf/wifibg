@@ -6,7 +6,7 @@
 	<string>edu.berkeley.stat.cleanaccount</string>
 	<key>ProgramArguments</key>
 	<array>
-	  <string>/var/tmp/cleanaccount.sh</string>
+	  <string>/usr/local/sbin/cleanaccount.sh</string>
 	</array>
         <key>RunAtLoad</key>
         <true/>
