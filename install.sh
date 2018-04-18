@@ -39,4 +39,9 @@ for i in edu.berkeley.stat.cleanaccount.plist edu.berkeley.stat.updatesharedwifi
         fi
 done
 
+cp $PROGDIR/etc/pf.anchors/* /etc/pf.anchors/ 
+
+pfctl -d 
+pfctl -e -f /etc/pf.conf
+
 osascript -e "tell application \"System Events\" to set picture of every desktop to (\"/Library/Desktop Pictures/${IMAGE}_Anno.jpg\" as POSIX file as alias)"
