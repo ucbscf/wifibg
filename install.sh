@@ -11,7 +11,7 @@ if [ ! -d "/var/log/wifibg" ] ; then
      chmod 755 /var/log/wifibg
 fi
 
-for i in update-snp-background.sh update-shared-network-pass.sh clean-account.sh
+for i in update-shared-network-pass.sh clean-account.sh
     do echo "copying ${i} to $USRSBIN/${i}" ;
     if [ ! -f "$USRSBIN/${i}" ] ; then
          cp $PROGDIR/${i} $USRSBIN/${i}
@@ -26,10 +26,10 @@ if [ -f "/Library/Desktop Pictures/${IMAGE}.jpg" ] ; then
     fi
 fi
 
-if [ ! -f "$LADIR/edu.berkeley.stat.updatesnpbackground.plist" ] ; then
-     cp $PROGDIR/LaunchAgents/edu.berkeley.stat.updatesnpbackground.plist $LADIR/edu.berkeley.stat.updatesnpbackground.plist
-     launchctl load -w $LADIR/edu.berkeley.stat.updatesnpbackground.plist
-fi
+#if [ ! -f "$LADIR/edu.berkeley.stat.updatesnpbackground.plist" ] ; then
+#     cp $PROGDIR/LaunchAgents/edu.berkeley.stat.updatesnpbackground.plist $LADIR/edu.berkeley.stat.updatesnpbackground.plist
+#     launchctl load -w $LADIR/edu.berkeley.stat.updatesnpbackground.plist
+#fi
 
 for i in edu.berkeley.stat.cleanaccount.plist edu.berkeley.stat.updatesharedwifi.plist
     do echo "copying ${i} to $LDDIR/${i}"

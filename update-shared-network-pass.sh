@@ -25,4 +25,8 @@ sleep 2
 networksetup -setairportpower en1 on
 
 DOCK=$(ps augwx | grep MacOS/Dock | grep -v grep | awk '{print $2}')
-kill ${DOCK}
+if [ -z "$DOCK" ] ; then
+    echo 'Nothing to do'
+else
+    kill ${DOCK}
+fi

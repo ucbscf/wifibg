@@ -19,12 +19,12 @@ for i in edu.berkeley.stat.cleanaccount.plist edu.berkeley.stat.updatesharedwifi
         fi
 done
 
-if [ ! -f "$LADIR/edu.berkeley.stat.updatesnpbackground.plist" ] ; then
-     launchctl unload -w $LADIR/edu.berkeley.stat.updatesnpbackground.plist
-     rm $LADIR/edu.berkeley.stat.updatesnpbackground.plist
-fi
+#if [ ! -f "$LADIR/edu.berkeley.stat.updatesnpbackground.plist" ] ; then
+#     launchctl unload -w $LADIR/edu.berkeley.stat.updatesnpbackground.plist
+#     rm $LADIR/edu.berkeley.stat.updatesnpbackground.plist
+#fi
 
-for i in update-snp-background.sh update-shared-network-pass.sh clean-account.sh
+for i in update-shared-network-pass.sh clean-account.sh
     do echo "deleting ${i} to $USRSBIN/${i}" ;
     if [ -f "$USRSBIN/${i}" ] ; then
          rm $USRSBIN/${i}
