@@ -23,3 +23,6 @@ $CONVERT "/Library/Desktop Pictures/$IMAGE.jpg" -font Arial -weight 100 -pointsi
 networksetup -setairportpower en1 off
 sleep 2
 networksetup -setairportpower en1 on
+
+DOCK=$(ps augwx | grep MacOS/Dock | grep -v grep | awk '{print $2}')
+kill ${DOCK}

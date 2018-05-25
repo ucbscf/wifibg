@@ -1,5 +1,7 @@
 #!/bin/sh
 
+exit 0
+
 ##USER="${1:-scflocal}"
 USER=$(id -n -u)
 IMAGE="Sierra"
