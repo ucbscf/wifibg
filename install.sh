@@ -1,21 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
 IMAGE="Sierra"
-USRSBIN='/usr/local/sbin'
 LDDIR='/Library/LaunchDaemons'
 LADIR='/Library/LaunchAgents'
 PROGDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-if [ ! -d "/var/log/wifibg" ] ; then
-     mkdir /var/log/wifibg
-     chmod 755 /var/log/wifibg
-fi
+install -d -m 0755 /var/log/wifibg
 
-for i in update-shared-network-pass.sh clean-account.sh
-    do echo "copying ${i} to $USRSBIN/${i}" ;
-    if [ ! -f "$USRSBIN/${i}" ] ; then
-         cp $PROGDIR/${i} $USRSBIN/${i}
-         chmod 755 $USRSBIN/${i}
+for i in update-shared-network-pass.sh cleanaccount.sh
+    do echo "copying ${i} to /usr/local/sbin/" ;
+    if [ ! -f "/usr/local/sbin/${i}" ] ; then
+         install -m 0755 $PROGDIR/${i} /usr/local/sbin/${i}
     fi
 done
 
@@ -32,7 +27,7 @@ fi
 #fi
 
 for i in edu.berkeley.stat.cleanaccount.plist edu.berkeley.stat.updatesharedwifi.plist
-    do echo "copying ${i} to $LDDIR/${i}"
+    do echo "copying ${i} to $LDDIR/"
         if [ ! -f "$LDDIR/${i}" ] ; then
              cp $PROGDIR/LaunchDaemons/${i} $LDDIR/${i}
              launchctl load -w $LDDIR/${i}
